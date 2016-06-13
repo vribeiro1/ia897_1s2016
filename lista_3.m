@@ -7,6 +7,8 @@
 % Prof. Paulo Valente
 %
 % Vinicius de Paulo Souza Ribeiro RA: 118906
+% 
+% Disponível em https://github.com/vribeiro1/ia897_1s2016
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
