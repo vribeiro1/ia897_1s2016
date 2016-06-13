@@ -141,6 +141,38 @@ saveas(figure(4), 'images/exercise_2_n_3_unperfect.png');
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
+% Exercício 4 - Geração do gráfico - p*(theta) x theta
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+theta = 0:0.01:10;
+p_theta = zeros(1, 1001);
+
+for i = 1:length(theta)
+    if theta(i) <= 2/3
+        p_theta(i) = inf;
+    elseif theta(i) <= 3
+        p_theta(i) = 0;
+    else
+        p_theta(i) = (5/2) * (theta(i) - 3);
+    end
+end
+
+figure(5)
+hold on
+grid on
+axis equal
+
+plot(theta, p_theta, 'r');
+
+xlabel('theta');
+ylabel('p*(theta)');
+
+saveas(figure(5), 'images/exercise_4_p_theta_vs_theta.fig');
+saveas(figure(5), 'images/exercise_4_p_theta_vs_theta.png');
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 % Exercício 7 - Classificação de Margem Máxima
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -149,7 +181,7 @@ saveas(figure(4), 'images/exercise_2_n_3_unperfect.png');
 
 [alpha, c] = high_margin_classifier(X_2, s_perf);
 
-figure(5)
+figure(6)
 hold on
 grid on
 axis equal
@@ -167,14 +199,14 @@ t = -15:0.01:15;
 y = -c(1)/c(2) * t + alpha/c(2);
 plot(t, y, 'r');
 
-saveas(figure(5), 'images/exercise_7_n_2_perfect.fig');
-saveas(figure(5), 'images/exercise_7_n_2_perfect.png');
+saveas(figure(6), 'images/exercise_7_n_2_perfect.fig');
+saveas(figure(6), 'images/exercise_7_n_2_perfect.png');
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% n = 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [alpha, c] = high_margin_classifier(X_3, s_perf);
 
-figure(6)
+figure(7)
 hold on
 grid on
 axis equal
@@ -193,8 +225,8 @@ t = -15:0.01:15;
 mesh(x_plot, y_plot, (alpha - x_plot * c(1) - y_plot * c(2)) / c(3));
 view(40,15)
 
-saveas(figure(6), 'images/exercise_7_n_3_perfect.fig');
-saveas(figure(6), 'images/exercise_7_n_3_perfect.png');
+saveas(figure(7), 'images/exercise_7_n_3_perfect.fig');
+saveas(figure(7), 'images/exercise_7_n_3_perfect.png');
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -207,7 +239,7 @@ saveas(figure(6), 'images/exercise_7_n_3_perfect.png');
 lambda = 0:0.1:5;
 class_error = zeros(1, length(lambda));
 
-figure(7)
+figure(8)
 hold on
 grid on
 axis equal
@@ -230,10 +262,10 @@ for j = 1:length(lambda)
     plot(t, y, 'r');
 end
 
-saveas(figure(7), 'images/exercise_8_n_2_unperfect.fig');
-saveas(figure(7), 'images/exercise_8_n_2_unperfect.png');
+saveas(figure(8), 'images/exercise_8_n_2_unperfect.fig');
+saveas(figure(8), 'images/exercise_8_n_2_unperfect.png');
 
-figure(8)
+figure(9)
 hold on
 grid on
 axis equal
@@ -242,14 +274,14 @@ plot(lambda, class_error)
 xlabel('Margem de separação (lambda)');
 ylabel('Erro de classificação');
 
-saveas(figure(8), 'images/exercise_8_n_2_error_vs_lambda.fig');
-saveas(figure(8), 'images/exercise_8_n_2_error_vs_lambda.png');
+saveas(figure(9), 'images/exercise_8_n_2_error_vs_lambda.fig');
+saveas(figure(9), 'images/exercise_8_n_2_error_vs_lambda.png');
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% n = 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 class_error = zeros(1, length(lambda));
 
-figure(9)
+figure(10)
 hold on
 grid on
 axis equal
@@ -273,10 +305,10 @@ for j = 1:length(lambda)
     view(40,15)
 end
 
-saveas(figure(9), 'images/exercise_8_n_3_unperfect.fig');
-saveas(figure(9), 'images/exercise_8_n_3_unperfect.png');
+saveas(figure(10), 'images/exercise_8_n_3_unperfect.fig');
+saveas(figure(10), 'images/exercise_8_n_3_unperfect.png');
 
-figure(10)
+figure(11)
 hold on
 grid on
 axis equal
@@ -285,8 +317,8 @@ plot(lambda, class_error)
 xlabel('Margem de separação (lambda)');
 ylabel('Erro de classificação');
 
-saveas(figure(10), 'images/exercise_8_n_3_error_vs_lambda.fig');
-saveas(figure(10), 'images/exercise_8_n_3_error_vs_lambda.png');
+saveas(figure(11), 'images/exercise_8_n_3_error_vs_lambda.fig');
+saveas(figure(11), 'images/exercise_8_n_3_error_vs_lambda.png');
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
