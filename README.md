@@ -1,8 +1,7 @@
-State University of Campinas
+# IA897 - Introduction to Mathematical Optimization
 
-School of Electrical and Computer Engineering
-
-IA897 - Introduction to Mathematical Optimization
+### State University of Campinas
+### School of Electrical and Computer Engineering
 
 Git repository for proposed exercises during the first semester of 2016.
 
